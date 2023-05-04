@@ -17,9 +17,12 @@
 		26FAB5BE2587FBFF00EA6ED6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26FAB5BC2587FBFF00EA6ED6 /* LaunchScreen.storyboard */; };
 		26FAB5C92587FCAE00EA6ED6 /* InferenceModule.mm in Sources */ = {isa = PBXBuildFile; fileRef = 26FAB5C82587FCAE00EA6ED6 /* InferenceModule.mm */; };
 		26FAB5D42587FEAE00EA6ED6 /* QuestionAnswering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FAB5D32587FEAE00EA6ED6 /* QuestionAnswering.swift */; };
+		79251D1837F43BB21458446A /* Pods_QuestionAnswering.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B0451EE23B6EDFACD17288 /* Pods_QuestionAnswering.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1909CCF191EA28042BD8C64A /* Pods-QuestionAnswering.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuestionAnswering.debug.xcconfig"; path = "Target Support Files/Pods-QuestionAnswering/Pods-QuestionAnswering.debug.xcconfig"; sourceTree = "<group>"; };
+		19B0451EE23B6EDFACD17288 /* Pods_QuestionAnswering.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuestionAnswering.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A8C10B26DFF28500F4A58D /* qa360_quantized.ptl */ = {isa = PBXFileReference; lastKnownFileType = file; path = qa360_quantized.ptl; sourceTree = "<group>"; };
 		26E43FA425A7871C00D36C5B /* vocab.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vocab.txt; sourceTree = "<group>"; };
 		26FAB5AE2587FBFD00EA6ED6 /* QuestionAnswering.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuestionAnswering.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +37,7 @@
 		26FAB5C72587FCAE00EA6ED6 /* InferenceModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InferenceModule.h; sourceTree = "<group>"; };
 		26FAB5C82587FCAE00EA6ED6 /* InferenceModule.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = InferenceModule.mm; sourceTree = "<group>"; };
 		26FAB5D32587FEAE00EA6ED6 /* QuestionAnswering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswering.swift; sourceTree = "<group>"; };
+		884245499C5605A0278FAFAE /* Pods-QuestionAnswering.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuestionAnswering.release.xcconfig"; path = "Target Support Files/Pods-QuestionAnswering/Pods-QuestionAnswering.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79251D1837F43BB21458446A /* Pods_QuestionAnswering.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +58,7 @@
 				26FAB5B02587FBFD00EA6ED6 /* QuestionAnswering */,
 				26FAB5AF2587FBFD00EA6ED6 /* Products */,
 				3656CDAF842F4A05734FCF42 /* Pods */,
+				C3CB72FBEC0E4C8E685E2B5C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,8 +93,18 @@
 		3656CDAF842F4A05734FCF42 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				1909CCF191EA28042BD8C64A /* Pods-QuestionAnswering.debug.xcconfig */,
+				884245499C5605A0278FAFAE /* Pods-QuestionAnswering.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C3CB72FBEC0E4C8E685E2B5C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				19B0451EE23B6EDFACD17288 /* Pods_QuestionAnswering.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,6 +114,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 26FAB5C22587FBFF00EA6ED6 /* Build configuration list for PBXNativeTarget "QuestionAnswering" */;
 			buildPhases = (
+				077504A1FAC8DC50F59B15C1 /* [CP] Check Pods Manifest.lock */,
 				26FAB5AA2587FBFD00EA6ED6 /* Sources */,
 				26FAB5AB2587FBFD00EA6ED6 /* Frameworks */,
 				26FAB5AC2587FBFD00EA6ED6 /* Resources */,
@@ -158,6 +175,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		077504A1FAC8DC50F59B15C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuestionAnswering-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		26FAB5AA2587FBFD00EA6ED6 /* Sources */ = {
@@ -312,6 +354,7 @@
 		};
 		26FAB5C32587FBFF00EA6ED6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1909CCF191EA28042BD8C64A /* Pods-QuestionAnswering.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -337,6 +380,7 @@
 		};
 		26FAB5C42587FBFF00EA6ED6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 884245499C5605A0278FAFAE /* Pods-QuestionAnswering.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -1,6 +1,7 @@
 import torch
 from transformers import DistilBertTokenizer, DistilBertForQuestionAnswering
 from torch.utils.mobile_optimizer import optimize_for_mobile
+import coremltools as ct
 
 tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-uncased-distilled-squad')
 model = DistilBertForQuestionAnswering.from_pretrained('distilbert-base-uncased-distilled-squad')
@@ -16,3 +17,11 @@ traced_model = torch.jit.trace(model_dynamic_quantized, inputs['input_ids'], str
 optimized_traced_model = optimize_for_mobile(traced_model)
 optimized_traced_model._save_for_lite_interpreter("QuestionAnswering/qa360_quantized.ptl")
 # 360 is the length of model input, i.e. the length of the tokenized ids of question+text
+
+
+mlmodel = ct.convert(
+	traced_model,
+	inputs=[ct.TensorType(name="context", shape=(ct.RangeDim(1, 360),), dtype=np.int32)]
+)
+
+mlmodel.save("QAModel.mlmodel")

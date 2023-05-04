@@ -1,4 +1,5 @@
 import UIKit
+import CoreML
 
 class ViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
@@ -20,6 +21,8 @@ class ViewController: UIViewController {
             fatalError("Can't find the text file!")
         }
     }()
+    
+    let mlmodel = try! mobilenet_v2_torchvision(configuration: MLModelConfiguration())
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +32,25 @@ class ViewController: UIViewController {
         guard var pixelBuffer = resizedImage.normalized() else {
             return
         }
-        guard let outputs = module.predict(image: UnsafeMutableRawPointer(&pixelBuffer)) else {
-            return
+        
+        let clock = ContinuousClock()
+        var outputs: [NSNumber]!
+        let result = clock.measure {
+            outputs = module.predict(image: UnsafeMutableRawPointer(&pixelBuffer))
         }
+
+        print(result)
+        
+        var out2: mobilenet_v2_torchvisionOutput?
+        let result2 = clock.measure {
+            out2 = try? mlmodel.prediction(input: mobilenet_v2_torchvisionInput(input_1: image.convertImage()!))
+        }
+        //print(out2?.output_1.sorted(by: { (one, two) in
+        //    one.value > two.value
+        //}))
+        print(result2)
+        
+        
         let zippedResults = zip(labels.indices, outputs)
         let sortedResults = zippedResults.sorted { $0.1.floatValue > $1.1.floatValue }.prefix(3)
         var text = ""

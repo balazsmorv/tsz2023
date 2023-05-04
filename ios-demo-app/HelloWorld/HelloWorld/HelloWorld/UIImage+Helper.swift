@@ -10,7 +10,7 @@ extension UIImage {
         }
         return image
     }
-
+    
     func normalized() -> [Float32]? {
         guard let cgImage = self.cgImage else {
             return nil
@@ -23,13 +23,13 @@ extension UIImage {
         var rawBytes: [UInt8] = [UInt8](repeating: 0, count: w * h * 4)
         rawBytes.withUnsafeMutableBytes { ptr in
             if let cgImage = self.cgImage,
-                let context = CGContext(data: ptr.baseAddress,
-                                        width: w,
-                                        height: h,
-                                        bitsPerComponent: bitsPerComponent,
-                                        bytesPerRow: bytesPerRow,
-                                        space: CGColorSpaceCreateDeviceRGB(),
-                                        bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) {
+               let context = CGContext(data: ptr.baseAddress,
+                                       width: w,
+                                       height: h,
+                                       bitsPerComponent: bitsPerComponent,
+                                       bytesPerRow: bytesPerRow,
+                                       space: CGColorSpaceCreateDeviceRGB(),
+                                       bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) {
                 let rect = CGRect(x: 0, y: 0, width: w, height: h)
                 context.draw(cgImage, in: rect)
             }
@@ -43,5 +43,61 @@ extension UIImage {
             normalizedBuffer[w * h * 2 + i] = (Float32(rawBytes[i * 4 + 2]) / 255.0 - 0.406) / 0.225 // B
         }
         return normalizedBuffer
+    }
+    
+    
+    
+    // convert A image to cv Pixel Buffer with 224*224
+    func convertImage() -> CVPixelBuffer? {
+        
+        let newSize = CGSize(width: 224.0, height: 224.0)
+        UIGraphicsBeginImageContext(newSize)
+        self.draw(in: CGRect(origin: CGPoint.zero, size: newSize))
+        
+        guard let resizedImage = UIGraphicsGetImageFromCurrentImageContext() else {
+            return nil
+        }
+        
+        UIGraphicsEndImageContext()
+        
+        // convert to pixel buffer
+        
+        let attributes = [kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue,
+                  kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue] as CFDictionary
+        var pixelBuffer: CVPixelBuffer?
+        let status = CVPixelBufferCreate(kCFAllocatorDefault,
+                                         Int(newSize.width),
+                                         Int(newSize.height),
+                                         kCVPixelFormatType_32ARGB,
+                                         attributes,
+                                         &pixelBuffer)
+        
+        guard let createdPixelBuffer = pixelBuffer, status == kCVReturnSuccess else {
+            return nil
+        }
+        
+        CVPixelBufferLockBaseAddress(createdPixelBuffer, CVPixelBufferLockFlags(rawValue: 0))
+        let pixelData = CVPixelBufferGetBaseAddress(createdPixelBuffer)
+        
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        guard let context = CGContext(data: pixelData,
+                                      width: Int(newSize.width),
+                                      height: Int(newSize.height),
+                                      bitsPerComponent: 8,
+                                      bytesPerRow: CVPixelBufferGetBytesPerRow(createdPixelBuffer),
+                                      space: colorSpace,
+                                      bitmapInfo: CGImageAlphaInfo.noneSkipFirst.rawValue) else {
+            return nil
+        }
+        
+        context.translateBy(x: 0, y: newSize.height)
+        context.scaleBy(x: 1.0, y: -1.0)
+        
+        UIGraphicsPushContext(context)
+        resizedImage.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+        UIGraphicsPopContext()
+        CVPixelBufferUnlockBaseAddress(createdPixelBuffer, CVPixelBufferLockFlags(rawValue: 0))
+        
+        return createdPixelBuffer
     }
 }

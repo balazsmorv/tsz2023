@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2655CA6425454E6E006AD893 /* UIImageHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2655CA6225454E6E006AD893 /* UIImageHelper.mm */; };
-		2658DBFB26EC059F00AA0F61 /* deeplabv3_scripted.pt in Resources */ = {isa = PBXBuildFile; fileRef = 2658DBFA26EC059F00AA0F61 /* deeplabv3_scripted.pt */; };
 		265BAFE8253A6A6800467AC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265BAFE7253A6A6800467AC4 /* AppDelegate.swift */; };
 		265BAFEA253A6A6800467AC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265BAFE9253A6A6800467AC4 /* SceneDelegate.swift */; };
 		265BAFEC253A6A6800467AC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265BAFEB253A6A6800467AC4 /* ViewController.swift */; };
@@ -19,12 +18,14 @@
 		265BB00E253A6E0E00467AC4 /* UIImage+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265BB00D253A6E0E00467AC4 /* UIImage+Helper.swift */; };
 		265BB017253A7F0500467AC4 /* TorchModule.mm in Sources */ = {isa = PBXBuildFile; fileRef = 265BB015253A7F0500467AC4 /* TorchModule.mm */; };
 		265F9A6F2551CB3700B8F2EC /* dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 265F9A6E2551CB3700B8F2EC /* dog.jpg */; };
+		54B9DE062A02B3AD0000F197 /* deeplabv3_scripted.pt in Resources */ = {isa = PBXBuildFile; fileRef = 54B9DE052A02B3AD0000F197 /* deeplabv3_scripted.pt */; };
+		54B9DE082A02B4530000F197 /* deeplabv3_scripted.ptl in Resources */ = {isa = PBXBuildFile; fileRef = 54B9DE072A02B4530000F197 /* deeplabv3_scripted.ptl */; };
+		922F4F540753D32EF534F3DF /* Pods_ImageSegmentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C98DDB0F24FB19B6A3FB3C /* Pods_ImageSegmentation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2655CA6225454E6E006AD893 /* UIImageHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UIImageHelper.mm; sourceTree = "<group>"; };
 		2655CA6325454E6E006AD893 /* UIImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageHelper.h; sourceTree = "<group>"; };
-		2658DBFA26EC059F00AA0F61 /* deeplabv3_scripted.pt */ = {isa = PBXFileReference; lastKnownFileType = file; path = deeplabv3_scripted.pt; sourceTree = "<group>"; };
 		265BAFE4253A6A6800467AC4 /* ImageSegmentation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageSegmentation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		265BAFE7253A6A6800467AC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		265BAFE9253A6A6800467AC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +40,11 @@
 		265BB015253A7F0500467AC4 /* TorchModule.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TorchModule.mm; sourceTree = "<group>"; };
 		265BB016253A7F0500467AC4 /* TorchModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TorchModule.h; sourceTree = "<group>"; };
 		265F9A6E2551CB3700B8F2EC /* dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog.jpg; sourceTree = "<group>"; };
+		54B9DE052A02B3AD0000F197 /* deeplabv3_scripted.pt */ = {isa = PBXFileReference; lastKnownFileType = file; path = deeplabv3_scripted.pt; sourceTree = "<group>"; };
+		54B9DE072A02B4530000F197 /* deeplabv3_scripted.ptl */ = {isa = PBXFileReference; lastKnownFileType = file; path = deeplabv3_scripted.ptl; sourceTree = "<group>"; };
+		7D18B8B971AD54CADA337FFC /* Pods-ImageSegmentation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageSegmentation.release.xcconfig"; path = "Target Support Files/Pods-ImageSegmentation/Pods-ImageSegmentation.release.xcconfig"; sourceTree = "<group>"; };
+		82C98DDB0F24FB19B6A3FB3C /* Pods_ImageSegmentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageSegmentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6C307885B626809B055FEFC /* Pods-ImageSegmentation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageSegmentation.debug.xcconfig"; path = "Target Support Files/Pods-ImageSegmentation/Pods-ImageSegmentation.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				922F4F540753D32EF534F3DF /* Pods_ImageSegmentation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,8 +62,18 @@
 		0230FA7E0130B495026BC19E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				A6C307885B626809B055FEFC /* Pods-ImageSegmentation.debug.xcconfig */,
+				7D18B8B971AD54CADA337FFC /* Pods-ImageSegmentation.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		12E56B96888ACDD085D1B54E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82C98DDB0F24FB19B6A3FB3C /* Pods_ImageSegmentation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		265BAFDB253A6A6800467AC4 = {
@@ -65,6 +82,7 @@
 				265BAFE6253A6A6800467AC4 /* ImageSegmentation */,
 				265BAFE5253A6A6800467AC4 /* Products */,
 				0230FA7E0130B495026BC19E /* Pods */,
+				12E56B96888ACDD085D1B54E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +101,8 @@
 				265BAFE9253A6A6800467AC4 /* SceneDelegate.swift */,
 				265BAFEB253A6A6800467AC4 /* ViewController.swift */,
 				265BAFED253A6A6800467AC4 /* Main.storyboard */,
+				54B9DE072A02B4530000F197 /* deeplabv3_scripted.ptl */,
+				54B9DE052A02B3AD0000F197 /* deeplabv3_scripted.pt */,
 				265BAFF0253A6A6900467AC4 /* Assets.xcassets */,
 				265BAFF2253A6A6900467AC4 /* LaunchScreen.storyboard */,
 				265BAFF5253A6A6900467AC4 /* Info.plist */,
@@ -92,7 +112,6 @@
 				265BB015253A7F0500467AC4 /* TorchModule.mm */,
 				265BB00D253A6E0E00467AC4 /* UIImage+Helper.swift */,
 				265BAFFF253A6B1200467AC4 /* ImageSegmentation-Bridging-Header.h */,
-				2658DBFA26EC059F00AA0F61 /* deeplabv3_scripted.pt */,
 				265BB007253A6B9600467AC4 /* deeplab.jpg */,
 				265F9A6E2551CB3700B8F2EC /* dog.jpg */,
 			);
@@ -106,6 +125,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 265BAFF8253A6A6900467AC4 /* Build configuration list for PBXNativeTarget "ImageSegmentation" */;
 			buildPhases = (
+				7FAC9B9343F2A2A80D8FA8B2 /* [CP] Check Pods Manifest.lock */,
 				265BAFE0253A6A6800467AC4 /* Sources */,
 				265BAFE1253A6A6800467AC4 /* Frameworks */,
 				265BAFE2253A6A6800467AC4 /* Resources */,
@@ -161,12 +181,38 @@
 				265BAFF4253A6A6900467AC4 /* LaunchScreen.storyboard in Resources */,
 				265BB008253A6B9600467AC4 /* deeplab.jpg in Resources */,
 				265BAFF1253A6A6900467AC4 /* Assets.xcassets in Resources */,
-				2658DBFB26EC059F00AA0F61 /* deeplabv3_scripted.pt in Resources */,
+				54B9DE082A02B4530000F197 /* deeplabv3_scripted.ptl in Resources */,
+				54B9DE062A02B3AD0000F197 /* deeplabv3_scripted.pt in Resources */,
 				265BAFEF253A6A6800467AC4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7FAC9B9343F2A2A80D8FA8B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ImageSegmentation-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		265BAFE0253A6A6800467AC4 /* Sources */ = {
@@ -322,19 +368,20 @@
 		};
 		265BAFF9253A6A6900467AC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6C307885B626809B055FEFC /* Pods-ImageSegmentation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RTG93BKR37;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ImageSegmentation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pytorch.mobile.ImageSegmentation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mb.ImageSegmentation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ImageSegmentation/ImageSegmentation-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -345,19 +392,20 @@
 		};
 		265BAFFA253A6A6900467AC4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D18B8B971AD54CADA337FFC /* Pods-ImageSegmentation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RTG93BKR37;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ImageSegmentation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pytorch.mobile.ImageSegmentation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mb.ImageSegmentation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ImageSegmentation/ImageSegmentation-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

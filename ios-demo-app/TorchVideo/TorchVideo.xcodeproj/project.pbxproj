@@ -25,7 +25,7 @@
 		26024BA9260D0E8A00B6F625 /* LiveVideoClassificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26024BA5260D0E8A00B6F625 /* LiveVideoClassificationViewController.swift */; };
 		26024BAA260D0E8A00B6F625 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26024BA6260D0E8A00B6F625 /* CameraPreviewView.swift */; };
 		26024BAB260D0E8A00B6F625 /* CVPixelBuffer+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26024BA7260D0E8A00B6F625 /* CVPixelBuffer+Helper.swift */; };
-		26A8C11026E17A3B00F4A58D /* video_classification.ptl in Resources */ = {isa = PBXBuildFile; fileRef = 26A8C10F26E17A3B00F4A58D /* video_classification.ptl */; };
+		41B52DF27B489DACCBEC22BF /* Pods_TorchVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F62876930803728FA16C568 /* Pods_TorchVideo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +51,10 @@
 		26024BA5260D0E8A00B6F625 /* LiveVideoClassificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LiveVideoClassificationViewController.swift; path = TorchVideo/LiveVideoClassificationViewController.swift; sourceTree = SOURCE_ROOT; };
 		26024BA6260D0E8A00B6F625 /* CameraPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraPreviewView.swift; path = TorchVideo/CameraPreviewView.swift; sourceTree = SOURCE_ROOT; };
 		26024BA7260D0E8A00B6F625 /* CVPixelBuffer+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CVPixelBuffer+Helper.swift"; path = "TorchVideo/CVPixelBuffer+Helper.swift"; sourceTree = SOURCE_ROOT; };
-		26A8C10F26E17A3B00F4A58D /* video_classification.ptl */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_classification.ptl; sourceTree = "<group>"; };
+		3F62876930803728FA16C568 /* Pods_TorchVideo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TorchVideo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		547746D12A03F017009ABFC4 /* video_classification.ptl */ = {isa = PBXFileReference; lastKnownFileType = file; name = video_classification.ptl; path = "/Users/balazsmorvay/Documents/tsz2023/ios-demo-app/TorchVideo/TorchVideo/video_classification.ptl"; sourceTree = "<absolute>"; };
+		7D568297053904BCA34D088A /* Pods-TorchVideo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorchVideo.release.xcconfig"; path = "Target Support Files/Pods-TorchVideo/Pods-TorchVideo.release.xcconfig"; sourceTree = "<group>"; };
+		ED5E33B674A0B5518448487A /* Pods-TorchVideo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorchVideo.debug.xcconfig"; path = "Target Support Files/Pods-TorchVideo/Pods-TorchVideo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41B52DF27B489DACCBEC22BF /* Pods_TorchVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +75,7 @@
 				26024B6226042B2300B6F625 /* TorchVideo */,
 				26024B6126042B2300B6F625 /* Products */,
 				EA0C558862607C5A9BA15E19 /* Pods */,
+				C1E446A419EF4FA22C517855 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,13 +98,13 @@
 				26024B6726042B2300B6F625 /* ViewController.swift */,
 				26024B6926042B2300B6F625 /* Main.storyboard */,
 				26024B6C26042B2500B6F625 /* Assets.xcassets */,
+				547746D12A03F017009ABFC4 /* video_classification.ptl */,
 				26024B6E26042B2500B6F625 /* LaunchScreen.storyboard */,
 				26024B7126042B2500B6F625 /* Info.plist */,
 				26024B7E260970AD00B6F625 /* video1.mp4 */,
 				26024B7F260970AD00B6F625 /* video2.mp4 */,
 				26024B80260970AD00B6F625 /* video3.mp4 */,
 				26024B86260A9F8500B6F625 /* classes.txt */,
-				26A8C10F26E17A3B00F4A58D /* video_classification.ptl */,
 			);
 			path = TorchVideo;
 			sourceTree = "<group>";
@@ -135,9 +140,19 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		C1E446A419EF4FA22C517855 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F62876930803728FA16C568 /* Pods_TorchVideo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EA0C558862607C5A9BA15E19 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				ED5E33B674A0B5518448487A /* Pods-TorchVideo.debug.xcconfig */,
+				7D568297053904BCA34D088A /* Pods-TorchVideo.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -149,6 +164,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 26024B7426042B2500B6F625 /* Build configuration list for PBXNativeTarget "TorchVideo" */;
 			buildPhases = (
+				E498C32B852C0FF37241F249 /* [CP] Check Pods Manifest.lock */,
 				26024B5C26042B2300B6F625 /* Sources */,
 				26024B5D26042B2300B6F625 /* Frameworks */,
 				26024B5E26042B2300B6F625 /* Resources */,
@@ -202,7 +218,6 @@
 			files = (
 				26024B7026042B2500B6F625 /* LaunchScreen.storyboard in Resources */,
 				26024B83260970AE00B6F625 /* video3.mp4 in Resources */,
-				26A8C11026E17A3B00F4A58D /* video_classification.ptl in Resources */,
 				26024B81260970AE00B6F625 /* video1.mp4 in Resources */,
 				26024B6D26042B2500B6F625 /* Assets.xcassets in Resources */,
 				26024B82260970AE00B6F625 /* video2.mp4 in Resources */,
@@ -212,6 +227,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E498C32B852C0FF37241F249 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TorchVideo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		26024B5C26042B2300B6F625 /* Sources */ = {
@@ -372,12 +412,13 @@
 		};
 		26024B7526042B2500B6F625 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED5E33B674A0B5518448487A /* Pods-TorchVideo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RTG93BKR37;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = TorchVideo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -385,7 +426,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pytorch.mobile.TorchVideo.TorchVideo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bmorvay.mobile.TorchVideo.TorchVideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TorchVideo/TorchVideo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -396,12 +437,13 @@
 		};
 		26024B7626042B2500B6F625 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D568297053904BCA34D088A /* Pods-TorchVideo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RTG93BKR37;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = TorchVideo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -409,7 +451,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pytorch.mobile.TorchVideo.TorchVideo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bmorvay.mobile.TorchVideo.TorchVideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TorchVideo/TorchVideo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
